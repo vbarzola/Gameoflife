@@ -6,7 +6,7 @@
 
 
 
-void dibujar_grilla(char **matriz, int fil, int col){		
+void dibujar_grilla(char **matriz, int fil, int col){
 	printf("\e[1;1H\e[2J");
 	char *linea = malloc(col + 1);	//Char nulo al final
 	for(int i = 0; i < fil; i++){
@@ -38,7 +38,7 @@ void llenar_matriz_azar(char **grilla, int fil, int col, int cantidad){
 		long rnd_fil = rand() % fil;	
 		long rnd_col = rand() % col;
 		
-		printf("%ld %ld\n", rnd_fil, rnd_col);
+		//printf("%ld %ld\n", rnd_fil, rnd_col);
 		if(grilla[rnd_fil][rnd_col] == 1){
 			i--;
 		}

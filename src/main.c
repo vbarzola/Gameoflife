@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "../include/util.h"
+#include "util.h"
+#include <unistd.h>
 
 int filas;
 int columnas;
@@ -10,42 +11,32 @@ int celulas;
 
 int main(int argc, char **argv)
 {
-    int index;
     int c;
 
-    opterr = 0;
-
-    while ((c = getopt(argc, argv, "f:c:g:s:i:")) != -1)
+    while ((c = getopt(argc, argv, "f:c:g:s:i:")) != -1){
         switch (c)
         {
         case 'f':
-            filas = optarg;
+            filas = atoi(optarg);
             break;
         case 'c':
-            columnas = optarg;
+            columnas = atoi(optarg);
             break;
         case 'g':
-            generaciones = optarg;
+            generaciones = atoi(optarg);
             break;
         case 's':
-            tiempo = optarg;
+            tiempo = atoi(optarg);
             break;
         case 'i':
-            celulas = optarg;
+            celulas = atoi(optarg);
             break;
-        case '?':
-            if (optopt == 'c')
-                fprintf(stderr, "Option -%c requires an argument.\n", optopt);
-            else if (isprint(optopt))
-                fprintf(stderr, "Unknown option `-%c'.\n", optopt);
-            else
-                fprintf(stderr,
-                        "Unknown option character `\\x%x'.\n",
-                        optopt);
-            return 1;
         default:
             abort();
         }
-
+    }
+    printf("Filas: %d, columnas: %d, generaciones: %d, tiempo: %d, celulas iniciales: %d\n",filas, columnas, generaciones, tiempo, celulas);
+    
+    
     return 0;
 }
