@@ -24,6 +24,8 @@ void dibujar_grilla(char **matriz, int fil, int col){
 		printf("\n");
 		fflush(stdout);
 	}
+
+	free(linea);
 }
 
 
