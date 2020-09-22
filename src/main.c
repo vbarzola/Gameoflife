@@ -46,8 +46,10 @@ int main(int argc, char **argv)
         }
     }
     crear_estructura();
-    printf("filas: %ld\n",vida.filas);
     dibujar_grilla(vida.tablero,vida.filas,vida.columnas);
+    printf("\n\n========================================\n\n");
+    actualizar();
+    //dibujar_grilla(vida.tablero,vida.filas,vida.columnas);
     return 0;
 }
 

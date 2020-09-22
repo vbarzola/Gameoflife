@@ -22,6 +22,12 @@ el resto lo llena de 0s.
 */
 void llenar_matriz_azar(char **grilla, int fil, int col, int cantidad);
 
+char** crear_matriz();
 
+void destruir_matriz();
+
+int contar_alrededor(int i, int j);
+
+void actualizar();
 
 #endif 
