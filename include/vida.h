@@ -10,6 +10,4 @@ typedef struct vida{
 	long generaciones;	
 } juego_de_vida;
 
-
-
 #endif 
