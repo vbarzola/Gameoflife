@@ -3,7 +3,7 @@
 #include <time.h>
 #include <unistd.h>
 #include <stdlib.h>
-
+#include "vida.h"
 
 
 void dibujar_grilla(char **matriz, int fil, int col){
@@ -49,3 +49,9 @@ void llenar_matriz_azar(char **grilla, int fil, int col, int cantidad){
 	}
 }
 
+/**
+ * Actualiza la matriz de vida.
+ */
+void actualizar(){
+
+}

@@ -4,7 +4,7 @@ obj/main.o: src/main.c
 	gcc -c -Wall -I include/ src/main.c -o $@
 
 obj/util.o: src/util.c
-	gcc -c -Wall src/util.c -o $@
+	gcc -c -Wall -I include/ src/util.c -o $@
 
 clean:
 	rm obj/*

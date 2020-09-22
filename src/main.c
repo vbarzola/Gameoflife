@@ -2,12 +2,15 @@
 #include <stdlib.h>
 #include "util.h"
 #include <unistd.h>
+#include "vida.h"
 
 int filas;
 int columnas;
 int generaciones;
 int tiempo;
 int celulas;
+
+juego_de_vida vida;
 
 int main(int argc, char **argv)
 {
