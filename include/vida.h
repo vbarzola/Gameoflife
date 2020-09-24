@@ -8,8 +8,8 @@ typedef struct stats{
 	int celulas_muertas;
 	int celulas_nacidas;
 	int celulas_muertas_gen;
-	int promedio_celulas_vivas;
-	int promedio_celulas_muertas;
+	double promedio_celulas_vivas;
+	double promedio_celulas_muertas;
 } stats;
 
 typedef struct vida{

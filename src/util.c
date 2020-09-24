@@ -84,6 +84,7 @@ void actualizar(){
 	vida.stats.celulas_vivas += vida.stats.celulas_nacidas - vida.stats.celulas_muertas_gen;
 	vida.stats.celulas_muertas +=  vida.stats.celulas_muertas_gen - vida.stats.celulas_nacidas;
 	vida.stats.promedio_celulas_vivas = (vida.stats.promedio_celulas_vivas * vida.stats.n_generacion + vida.stats.celulas_vivas) / (vida.stats.n_generacion +1);
+	vida.stats.promedio_celulas_muertas = (vida.stats.promedio_celulas_muertas * vida.stats.n_generacion + vida.stats.celulas_muertas) / (vida.stats.n_generacion+1);
 }
 
 int contar_alrededor(int i, int j){

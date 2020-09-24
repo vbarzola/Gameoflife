@@ -76,8 +76,8 @@ void print_stats(){
 	printf("Celulas muertas: %d\n",vida.stats.celulas_muertas);
 	printf("Celulas que nacieron en esta generacion: %d\n",vida.stats.celulas_nacidas);
 	printf("Celulas que murieron en esta generacion: %d\n",vida.stats.celulas_muertas_gen);
-	printf("Promedio de celulas vivas: %d\n",vida.stats.promedio_celulas_vivas);
-	printf("Promedio de celulas muertas: %d\n",vida.stats.promedio_celulas_muertas);
+	printf("Promedio de celulas vivas: %.2f\n",vida.stats.promedio_celulas_vivas);
+	printf("Promedio de celulas muertas: %.2f\n",vida.stats.promedio_celulas_muertas);
 
 
 }
