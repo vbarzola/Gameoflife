@@ -46,24 +46,36 @@ int main(int argc, char **argv)
         }
     }
     crear_estructura();
-    int cont_generaciones=0;
     if(generaciones<0){
     	while(1){
-		    print("generacion: %d",cont_generaciones);
 		    dibujar_grilla(vida.tablero,vida.filas,vida.columnas);
 		    actualizar();
 		    usleep(tiempo);
-		    cont_generaciones++;		
+		    	
 	    }
     }
     for(int i=0; i<generaciones;i++){
-        print("generación: %d",i);
         dibujar_grilla(vida.tablero,vida.filas,vida.columnas);
         actualizar();
         usleep(tiempo);	
     }
     return 0;
 }
+
+
+void print_stats(){
+	printf("Numero de generacion: %d",vida.stats.n_generacion);
+	printf("Celulas vivas: %d",vida.stats.celulas_vivas);
+	printf("Celulas muertas: %d",vida.stats.celulas_muertas);
+	printf("Celulas que nacieron en esta generacion: %d",vida.stats.celulas_nacidas);
+	printf("Celulas que murieron en esta generacion: %d",vida.stats.celulas_muertas_gen);
+	printf("Promedio de celulas vivas: %d",vida.stats.promedio_celulas_vivas);
+	printf("Promedio de celulas muertas: %d",vida.stats.promedio_celulas_muertas);
+
+
+}
+
+
 
 char **crear_matriz(){
     char **tablero = calloc(vida.filas, sizeof(char *));
