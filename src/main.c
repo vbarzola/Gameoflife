@@ -54,10 +54,14 @@ int main(int argc, char **argv)
 		    	
 	    }
     }
+    else{
     for(int i=0; i<generaciones;i++){
         dibujar_grilla(vida.tablero,vida.filas,vida.columnas);
+	print_stats();
         actualizar();
         usleep(tiempo);	
+    } 
+    print_stats();
     }
     return 0;
 }
