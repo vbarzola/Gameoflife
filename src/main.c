@@ -49,20 +49,18 @@ int main(int argc, char **argv)
     int cont_generaciones=0;
     if(generaciones<0){
     	while(1){
-		print("generacion: %d",cont_generaciones);
-		dibujar_grilla(vida.tablero,vida.filas,vida.columnas);
-		//printf("\n\n========================================\n\n");
-		actualizar();
-		usleep(tiempo);
-		cont_generaciones++;		
-	}
+		    print("generacion: %d",cont_generaciones);
+		    dibujar_grilla(vida.tablero,vida.filas,vida.columnas);
+		    actualizar();
+		    usleep(tiempo);
+		    cont_generaciones++;		
+	    }
     }
     for(int i=0; i<generaciones;i++){
-	print("generación: %d",i);
-	dibujar_grilla(vida.tablero,vida.filas,vida.columnas);
-	printf("\n\n========================================\n\n");
-	actualizar();
-	usleep(tiempo);	
+        print("generación: %d",i);
+        dibujar_grilla(vida.tablero,vida.filas,vida.columnas);
+        actualizar();
+        usleep(tiempo);	
     }
     return 0;
 }
@@ -83,6 +81,13 @@ void crear_estructura()
     vida.tiempo_sleep = tiempo,
     vida.generaciones = generaciones;
     vida.tablero = crear_matriz(),
+    vida.stats.celulas_muertas = filas*columnas - celulas;
+    vida.stats.celulas_vivas = celulas;
+    vida.stats.n_generacion = 0;
+    vida.stats.promedio_celulas_muertas = vida.stats.celulas_muertas;
+    vida.stats.promedio_celulas_vivas = vida.stats.celulas_vivas;
+    vida.stats.celulas_nacidas = 0;
+    vida.stats.celulas_muertas_gen = 0;
     llenar_matriz_azar(vida.tablero, filas, columnas, celulas);
 }
 

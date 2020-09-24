@@ -58,24 +58,32 @@ void llenar_matriz_azar(char **grilla, int fil, int col, int cantidad){
  * Actualiza la matriz de vida.
  */
 void actualizar(){
+	vida.stats.celulas_nacidas = 0;
+	vida.stats.celulas_muertas_gen = 0;
 	char** nuevaMatriz = crear_matriz();
         for(int i=0;i<vida.filas;i++){
                 for(int j=0;j<vida.columnas;j++){
                         int c = contar_alrededor(i,j);
                         if(vida.tablero[i][j]==1){
-                                if(c<=1||c>=4) nuevaMatriz[i][j]=0;
-                                else nuevaMatriz[i][j]=1;
+                            if(c<=1||c>=4){
+								nuevaMatriz[i][j]=0;
+								vida.stats.celulas_muertas_gen++;
+							} 
+                            else nuevaMatriz[i][j]=1;
                         }else{
-                                if(c==3) nuevaMatriz[i][j]=1;
+                                if(c==3){
+									nuevaMatriz[i][j]=1;
+									vida.stats.celulas_nacidas++;
+								} 
                         }
-
                 }
-
         }
 	destruir_matriz();
 	vida.tablero= nuevaMatriz;
-
-
+	vida.stats.n_generacion++;
+	vida.stats.celulas_vivas += vida.stats.celulas_nacidas - vida.stats.celulas_muertas_gen;
+	vida.stats.celulas_muertas +=  vida.stats.celulas_muertas_gen - vida.stats.celulas_nacidas;
+	vida.stats.promedio_celulas_vivas = (vida.stats.promedio_celulas_vivas * vida.stats.n_generacion + vida.stats.celulas_vivas) / (vida.stats.n_generacion +1);
 }
 
 int contar_alrededor(int i, int j){
