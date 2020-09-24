@@ -17,6 +17,7 @@ juego_de_vida vida;
  * de la aplicacion.
  */
 void crear_estructura();
+void print_stats();
 
 int main(int argc, char **argv)
 {
