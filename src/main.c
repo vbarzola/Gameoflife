@@ -50,6 +50,7 @@ int main(int argc, char **argv)
     	while(1){
 		    dibujar_grilla(vida.tablero,vida.filas,vida.columnas);
 		    actualizar();
+		    print_stats();
 		    usleep(tiempo);
 		    	
 	    }
