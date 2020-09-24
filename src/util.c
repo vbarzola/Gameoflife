@@ -72,7 +72,6 @@ void actualizar(){
                 }
 
         }
-	dibujar_grilla(nuevaMatriz, vida.filas, vida.columnas);
 	destruir_matriz();
 	vida.tablero= nuevaMatriz;
 
