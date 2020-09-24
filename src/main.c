@@ -50,8 +50,8 @@ int main(int argc, char **argv)
     if(generaciones<0){
     	while(1){
 		    dibujar_grilla(vida.tablero,vida.filas,vida.columnas);
-		    actualizar();
 		    print_stats();
+		    actualizar();
 		    usleep(tiempo);
 		    	
 	    }
@@ -63,6 +63,7 @@ int main(int argc, char **argv)
         actualizar();
         usleep(tiempo);	
     } 
+    dibujar_grilla(vida.tablero,vida.filas,vida.columnas);
     print_stats();
     }
     return 0;
@@ -70,13 +71,13 @@ int main(int argc, char **argv)
 
 
 void print_stats(){
-	printf("Numero de generacion: %d",vida.stats.n_generacion);
-	printf("Celulas vivas: %d",vida.stats.celulas_vivas);
-	printf("Celulas muertas: %d",vida.stats.celulas_muertas);
-	printf("Celulas que nacieron en esta generacion: %d",vida.stats.celulas_nacidas);
-	printf("Celulas que murieron en esta generacion: %d",vida.stats.celulas_muertas_gen);
-	printf("Promedio de celulas vivas: %d",vida.stats.promedio_celulas_vivas);
-	printf("Promedio de celulas muertas: %d",vida.stats.promedio_celulas_muertas);
+	printf("Numero de generacion: %d\n",vida.stats.n_generacion);
+	printf("Celulas vivas: %d\n",vida.stats.celulas_vivas);
+	printf("Celulas muertas: %d\n",vida.stats.celulas_muertas);
+	printf("Celulas que nacieron en esta generacion: %d\n",vida.stats.celulas_nacidas);
+	printf("Celulas que murieron en esta generacion: %d\n",vida.stats.celulas_muertas_gen);
+	printf("Promedio de celulas vivas: %d\n",vida.stats.promedio_celulas_vivas);
+	printf("Promedio de celulas muertas: %d\n",vida.stats.promedio_celulas_muertas);
 
 
 }
