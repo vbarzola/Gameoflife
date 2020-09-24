@@ -46,10 +46,24 @@ int main(int argc, char **argv)
         }
     }
     crear_estructura();
-    dibujar_grilla(vida.tablero,vida.filas,vida.columnas);
-    printf("\n\n========================================\n\n");
-    actualizar();
-    //dibujar_grilla(vida.tablero,vida.filas,vida.columnas);
+    int cont_generaciones=0;
+    if(generaciones<0){
+    	while(1){
+		print("generacion: %d",cont_generaciones);
+		dibujar_grilla(vida.tablero,vida.filas,vida.columnas);
+		//printf("\n\n========================================\n\n");
+		actualizar();
+		usleep(tiempo);
+		cont_generaciones++;		
+	}
+    }
+    for(int i=0; i<generaciones;i++){
+	print("generación: %d",i);
+	dibujar_grilla(vida.tablero,vida.filas,vida.columnas);
+	printf("\n\n========================================\n\n");
+	actualizar();
+	usleep(tiempo);	
+    }
     return 0;
 }
 
